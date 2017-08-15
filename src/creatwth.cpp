@@ -768,7 +768,7 @@ BOOL WINAPI DetourUpdateProcessWithDll(HANDLE hProcess, LPCSTR *plpDlls, DWORD n
         if (der.clr.Flags & 0x2) { // Is the 32BIT Required Flag set?
             // X64 never gets here because the process appears as a WOW64 process.
             // However, on IA64, it doesn't appear to be a WOW process.
-            DETOUR_TRACE(("CLR Requires 32-bit\n", der.pclr, der.pclr + der.cbclr));
+            DETOUR_TRACE(("CLR Requires 32-bit\n"));
             SetLastError(ERROR_INVALID_HANDLE);
             return FALSE;
         }
